@@ -1,6 +1,6 @@
-import express from 'express';
-import { exec } from 'child_process';
 import axios from 'axios';
+import { exec } from 'child_process';
+import express from 'express';
 
 const app = express();
 app.use(express.json());
@@ -9,7 +9,7 @@ const PORT = 3001;
 const USER_SERVICE_URL = 'http://localhost:3002';
 
 app.post('/api/admin/start', (req, res) => {
-  exec('python /home/project/raspberry.py', (error, stdout, stderr) => {
+  exec('python3 /Users/cool-drummer/Desktop/proyects/dadocompany/react-dispenser/server/raspberry.py', (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
       return res.status(500).json({ error: 'Failed to start motor' });

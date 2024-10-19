@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Egg } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
 const UserInterface: React.FC = () => {
   const [status, setStatus] = useState<'standby' | 'processing' | 'completed'>('standby');

@@ -1,5 +1,4 @@
 import express from 'express';
-import { exec } from 'child_process';
 
 const app = express();
 app.use(express.json());
@@ -12,11 +11,11 @@ app.post('/webhook', (req, res) => {
   if (action === 'start') {
     currentStatus = 'processing';
     // Play audio
-    exec('aplay /path/to/your/audio_file.wav', (error) => {
-      if (error) {
-        console.error(`Error playing audio: ${error}`);
-      }
-    });
+    //exec('aplay /path/to/your/audio_file.wav', (error) => {
+     // if (error) {
+      //  console.error(`Error playing audio: ${error}`);
+     // }
+    //});
     setTimeout(() => {
       currentStatus = 'completed';
       setTimeout(() => {
